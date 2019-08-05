@@ -59,3 +59,12 @@ def step_impl(context):
 	# Checks redirection URL
 	assert br.current_url.endswith('/login/fail/')
 	assert br.find_element_by_id('main_title').text == "Login failure"
+
+@when("checking for HTML tag")
+def step_impl(context):
+	br = context.browser
+	br.get(context.base_url + '/login/')
+	assert br.find_element_by_tag_name('form')
+	br.find_element_by_name('username').send_keys('foo')
+	br.find_element_by_name('password').send_keys('bar-is-invalid')
+	br.find_element_by_name('submit').click()

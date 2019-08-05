@@ -1,7 +1,7 @@
-<form action="/login/" method="POST">
+<form action="/login/" id="loginForm" method="POST">
 	{% csrf_token %}
 
-	<div>
+	<div class="login">
 		<label for="username">Username</label>
 		<input type="text" name="username" id="username">
 

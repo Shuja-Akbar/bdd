@@ -15,3 +15,7 @@ Feature: Login form
 	Given an anonymous user
 	When I submit an invalid login page
 	Then I am redirected to the login fail page
+
+  Scenario: Checking For html5 tag
+  Given an anonymous user
+  When checking for HTML tag
